@@ -1,0 +1,17 @@
+.scroll {
+    overflow: scroll;
+}
+
+#body{
+    background-color: #eeeeee ;
+    height: 100vh
+}
+
+#video-detail {
+    height: 100vh
+
+}
+
+#random-video {
+    height: 100vh
+} 
