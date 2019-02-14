@@ -21,16 +21,11 @@
                     <div class="text-center">
                         <a href="" data-toggle="modal" data-target="#modalContactForm"><i class="fas fa-cloud-upload-alt fa-2x "></i></a>
                     </div>
-                
                     <!--SERACH VIDEO-->
-                    <form class="form-inline my-1">
-                        <div class="md-form form-sm my-0">
-                        <input class="form-control form-control-sm mr-sm-2 mb-0" type="text" placeholder="Search" aria-label="Search">
-                        </div>
-                        <i class="fas fa-search" style="cursor: pointer"></i>
-                    </form>
+                    <search-video @search-video="searchVideo" :videos="videos"></search-video>
                 </nav>
-                
+                {{text}}
+
                 <!--UPLOAD FORM-->
                 <!--MODAL-->
                 <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -172,5 +167,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.1/js/mdb.min.js"></script>
+
+    <script src="assets/components/search.js"></script>
+    <script src="assets/components/main.js"></script>
 </body>
 </html>
