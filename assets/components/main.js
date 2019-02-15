@@ -3,6 +3,7 @@ new Vue({
     created() {
         axios.get(`http://localhost:3000/videos`)
         .then(videos => {
+            console.log(videos.data)
             this.videos = videos.data
         })
         .catch(err => {
