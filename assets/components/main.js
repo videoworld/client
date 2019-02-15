@@ -34,7 +34,7 @@ new Vue({
 
             var id_token = googleUser.getAuthResponse().id_token;
 
-            axios.post('http://localhost:3000/api/user/authentication/google', {id_token})
+            axios.post('http://localhost:3000/login', { headers: id_token })
                 .then(({data}) => {
                     localStorage.setItem('token', `${data.token}`)
                 })

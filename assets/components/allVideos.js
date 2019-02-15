@@ -4,6 +4,9 @@ Vue.component('all-videos', {
         getTwitterText(title, url) {
             let convert = url.split(' ').join('%20')
             return `${title} ${convert}`
+        },
+        whatsappUrl(url) {
+            return `https://api.whatsapp.com/send?text=${url}`
         }
     },
     template: `
@@ -27,21 +30,23 @@ Vue.component('all-videos', {
                         data-related="twitterapi,twitter">
                     Tweet
                     </a>
-                    <div class="line-it-button" data-lang="en" data-type="share-c" data-ver="2" data-url="http://asdf" style="display: none;"></div>
-                    
+                    <div class="line-it-button" data-lang="en" data-type="share-c" data-ver="2" :data-url="vid.videoUrl" style="display: none;"></div>
+                    <div><a :href="whatsappUrl(vid.videoUrl)" target="_blank"><img src="https://img.icons8.com/color/48/000000/whatsapp.png" height="30px"></a></div
+                    <g:plus action="share" ...></g:plus>
+                </div>                     
                 <div class="embed-responsive embed-responsive-16by9">
                     <video width="320" height="240" class="embed-responsive-item" controls>
                         <source :src="vid.videoUrl" type="video/mp4">
                     </video>
-                    
                 </div>
-            </div>                            
-        </div>
-    </div>   
-        <hr>
+            </div>
+        </div>   
+    <hr>
     </div> 
     `
 })
 /* <iframe class="embed-responsive-item" :src="vid.videoUrl" allowfullscreen></iframe> */
 /* <div class="line-it-button" data-lang="en" data-type="share-d" data-ver="2" data-url="http://upvid.mahdihrs.world" style="display: none;"></div> */
 /* <iframe src="https://www.facebook.com/plugins/share_button.php?href=https://storage.googleapis.com/miniwpstorage/1550204158199PMMB(PapaMarahMukaBopeng).mp4/&layout=button_count&size=large&mobile_iframe=true&width=83&height=28&appId" width="83" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe> */
+
+{/* <a href="whatsapp://send" data-text="Take a look at this awesome website:" data-href="" class="wa_btn wa_btn_s" style="display:none">Share</a> */}
