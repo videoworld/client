@@ -51,7 +51,8 @@ Vue.component('upload-video', {
         </div>
     </div>
     <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-unique  red accent-4" type="submit"> Send <i class="fas fa-paper-plane-o ml-1"></i></button>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <button class="btn btn-unique  red accent-4" type="submit"> Upload <i class="fas fa-paper-plane-o ml-1"></i></button>
     </div>
   </form>
   </div>
