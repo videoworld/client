@@ -27,17 +27,17 @@ Vue.component('all-videos', {
                         data-related="twitterapi,twitter">
                     Tweet
                     </a>
-                    <iframe src="https://www.facebook.com/plugins/share_button.php?href=https://storage.googleapis.com/miniwpstorage/1550204158199PMMB(PapaMarahMukaBopeng).mp4/&layout=button_count&size=large&mobile_iframe=true&width=83&height=28&appId" width="83" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-                    <div class="line-it-button" data-lang="en" data-type="share-d" data-ver="2" data-url="http://upvid.mahdihrs.world" style="display: none;"></div>
-                        <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
-                    </div>
-                    <a href="line://msg/text/<?php echo $post_permalink_encode; ?>" target="_blank">Share on LINE</a>
+                    <div class="line-it-button" data-lang="en" data-type="share-c" data-ver="2" data-url="http://asdf" style="display: none;"></div>
+                    
                 <div class="embed-responsive embed-responsive-16by9">
                     <iframe class="embed-responsive-item" :src="vid.videoUrl" allowfullscreen></iframe>
                 </div>
             </div>                            
         </div>
-    </div>    
-    <hr>
+    </div>   
+        <hr>
+    </div> 
     `
 })
+/* <div class="line-it-button" data-lang="en" data-type="share-d" data-ver="2" data-url="http://upvid.mahdihrs.world" style="display: none;"></div> */
+/* <iframe src="https://www.facebook.com/plugins/share_button.php?href=https://storage.googleapis.com/miniwpstorage/1550204158199PMMB(PapaMarahMukaBopeng).mp4/&layout=button_count&size=large&mobile_iframe=true&width=83&height=28&appId" width="83" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe> */
