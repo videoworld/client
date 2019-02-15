@@ -18,11 +18,11 @@ Vue.component('upload-video', {
       axios({
         method : 'post', 
         url : `${databaseUrl}/videos`,
-        headers : {"Content-Type" : 'multipart/form-data'},
+        headers : {"Content-Type" : 'multipart/form-data', "token": localStorage.getItem('token')},
         data : formData
       })
       .then(({data}) => {
-        this.$emit('upload-video', {video : data})
+        this.$emit('upload-video', data)
         this.title = ''
         this.description = ''
         this.file = []
@@ -31,7 +31,7 @@ Vue.component('upload-video', {
       .catch(err => {
         console.error(err)
       })
-    }, 
+    },
     previewFiles() {
       this.files = this.$refs.myFiles.files
     },

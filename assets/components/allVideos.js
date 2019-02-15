@@ -13,7 +13,7 @@ Vue.component('all-videos', {
     <!--VIDEO-->
     <div id="video-detail" class="col-12 col-sm-6 col-md-8 scroll">
     <hr>
-        <div class="card z-depth-2 offset-md-1" style="width: 85%;" v-for="vid in homepagevideos">
+        <div class="card z-depth-2 offset-md-1" style="width: 85%;" v-for="vid in homepagevideos" :key="vid._id">
             <div class="view overlay">
                 <div class="card-body elegant-color white-text">
                     <a class="mr-4"><i class="fas fa-share-alt white-text"></i></a>
