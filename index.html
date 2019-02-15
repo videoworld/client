@@ -15,7 +15,11 @@
 <body>
     <!--APP-->
     <div id="app">
+<<<<<<< HEAD
         <div>
+=======
+        <div >
+>>>>>>> add list video
             <!--NAVBAR-->
             <div id="navbar">
                 <nav class="navbar  red accent-4 justify-content-between">
@@ -26,7 +30,10 @@
                     <!--SERACH VIDEO-->
                     <search-video @search-video="searchVideo" :videos="videos"></search-video>
                 </nav>
+<<<<<<< HEAD
                
+=======
+>>>>>>> add list video
 
                 <!--UPLOAD FORM-->
                 <!--MODAL-->
@@ -54,45 +61,11 @@
             <!--VIDEO LIST-->
             <div id="body">
                 <div class="row">
-                    <div id="video-detail" class="col-12 col-sm-6 col-md-8 scroll" >
-                        <hr>
                         <!--VIDEO-->
-                        <all-videos> </all-videos>
-                        <!-- <div class="card z-depth-2 offset-md-1" style="width: 85%;">
-                            <div class="view overlay">
-                                <div class="card-body elegant-color white-text">
-                                    <a class="mr-4"><i class="fas fa-share-alt white-text"></i></a>
-                                    <h4 class="card-title">Video title</h4>
-                                    <hr class="hr-light">
-                                    <p class="card-text white-text mb-4">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-
-                                <img class="card-img-bottom " src="https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2821%29.jpg" alt="Card image cap">
-                            </div>                            
-                        </div>
-                        <hr> -->
-
-                         <!--VIDEO-->
-                         <!-- <div class="card z-depth-2 offset-md-1" style="width: 85%">
-                            <div class="view overlay">
-                                <div class="card-body elegant-color white-text rounded-bottom">
-                                    <a class="activator waves-effect mr-4"><i class="fas fa-share-alt white-text"></i></a>
-                                    <h4 class="card-title">Video title</h4>
-                                    <hr class="hr-light">
-                                    <p class="card-text white-text mb-4">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-
-                                <img class="card-img-bottom" src="https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2821%29.jpg" alt="Card image cap">
-                                <a>
-                                    <div class="mask rgba-white-slight"></div>
-                                </a>
-                            </div>                            
-                        </div> -->
-                        <!-- <hr> -->
-
-                    </div>
+                    <all-videos :homepagevideos="videos"></all-videos>
                     <!--RANDOM VIDEO-->
-                    <div id="random-video" class="col-6 col-md-4 scroll">
+                    <recommendation-videos :recom-vids="recommendationVideos"></recommendation-videos>
+                    <!-- <div id="random-video" class="col-6 col-md-4 scroll">
                         <hr>
                         <div class="card offset-md-1" style="width:80%">
                             <div class="view overlay">
@@ -135,7 +108,7 @@
                             </div>
                         </div>
                         <hr>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -144,15 +117,23 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.1/js/mdb.min.js"></script>
+<<<<<<< HEAD
     <script src="assets/components/search.js"></script>
 
     <script src="assets/components/upload.js"></script>
     <script src="assets/components/main.js"></script>
+=======
+    
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script src="/assets/components/search.js"></script>
+>>>>>>> add list video
     <script src="/assets/components/allVideos.js"></script>
-    <script src=""></script>
+    <script src="/assets/components/recommendationVideos.js"></script>
+    <script src="/assets/components/main.js"></script>
 </body>
 </html>
