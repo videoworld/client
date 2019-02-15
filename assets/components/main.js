@@ -1,8 +1,21 @@
 new Vue({
     el:"#app",
+    created() {
+        axios.get(`http://localhost:3000/videos`)
+        .then(videos => {
+            this.videos = videos.data
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    },
+    components: {
+        
+    },
     data: {
-        videos:[{title:"video A"}, {title: "video B"}],
-        filtered: []
+        filtered: [],
+        videos:[],
+        recommendationVideos: []
     },
     methods: {
         searchVideo(payload) {
