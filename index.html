@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.1/css/mdb.min.css" rel="stylesheet">
+    <title>Video World</title>
+    <meta name="google-signin-client_id" content="299733928822-cq5dvg61rfvvn07vj1po12e9ful75hjn.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+<body>
+    <!--APP-->
+    <div id="app">
+        <div >
+            <!--NAVBAR-->
+            <div id="navbar">
+                <nav class="navbar  red accent-4 justify-content-between">
+                    <!--UPLOAD-->
+                    <div class="text-center">
+                        <a href="" data-toggle="modal" data-target="#modalContactForm"><i class="fas fa-cloud-upload-alt fa-2x "></i></a>
+                    </div>
+                    <!--SERACH VIDEO-->
+                    <search-video @search-video="searchVideo" :videos="videos"></search-video>
+                </nav>
+
+                <!--UPLOAD FORM-->
+                <!--MODAL-->
+                <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header text-center">
+                            <h4 class="modal-title w-100 font-weight-bold">Upload Video</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <!-- FORM -->
+                        <upload-video v-on:upload-video="uploadVideo"> </upload-video>
+                        
+                        <div>
+
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <!---->
+            </div>
+
+            <!--VIDEO LIST-->
+            <div id="body">
+                <div class="row">
+                        <!--VIDEO-->
+                    <all-videos :homepagevideos="filtered"></all-videos>
+                    <!--RANDOM VIDEO-->
+                    <recommendation-videos :recom-vids="recommendationVideos"></recommendation-videos> 
+                </div>
+            </div>
+
+        </div> 
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.1/js/mdb.min.js"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <script src="assets/components/search.js"></script>
+    <script src="assets/components/upload.js"></script>
+    <script src="/assets/components/allVideos.js"></script>
+    <script src="/assets/components/recommendationVideos.js"></script>
+    <script src="/assets/components/main.js"></script>
+    <script>
+        function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+
+        var token = googleUser.getAuthResponse().id_token;
+        axios.post('http://localhost:3000/login', {token})
+            .then(({data}) => {
+                localStorage.setItem('token', `${data.token}`)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+    </script>
+</body>
+</html>
