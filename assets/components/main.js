@@ -5,7 +5,10 @@ new Vue({
     },
     methods: {
         searchVideo(payload) {
-            this.text = `success` + payload
+            // this.text = `success` + payload
+        },
+        uploadVideo(payload) {
+            this.videos.push(payload)
         }
     }
 })

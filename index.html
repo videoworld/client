@@ -24,7 +24,7 @@
                     <!--SERACH VIDEO-->
                     <search-video @search-video="searchVideo" :videos="videos"></search-video>
                 </nav>
-                {{text}}
+               
 
                 <!--UPLOAD FORM-->
                 <!--MODAL-->
@@ -37,24 +37,8 @@
                             <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <form>
-                            <div class="modal-body mx-3">
-                                <div class="md-form mb-5">
-                                <input type="text" id="form34" class="form-control validate">
-                                <label data-error="wrong" data-success="right" for="form34">Title</label>
-                                </div>
-    
-                                <div class="md-form">
-                                <textarea type="text" id="form8" class="md-textarea form-control" rows="4"></textarea>
-                                <label data-error="wrong" data-success="right" for="form8">Description</label>
-                                </div>
-                            </div>
-                            <div class="modal-footer d-flex justify-content-center">
-                                <button class="btn btn-unique  red accent-4">Send <i class="fas fa-paper-plane-o ml-1"></i></button>
-                            </div>
-
-                            <!--MULTER-->
-                        </form>
+                        <!-- FORM -->
+                        <upload-video v-on:upload-video="uploadVideo"> </upload-video>
                         
                         <div>
 
@@ -165,6 +149,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.1/js/mdb.min.js"></script>
     <script src="assets/components/search.js"></script>
+
+    <script src="assets/components/upload.js"></script>
     <script src="assets/components/main.js"></script>
 </body>
 </html>
