@@ -1,11 +1,13 @@
 new Vue({
     el:"#app",
     data: {
-        videos:[],
+        videos:[{title:"video A"}, {title: "video B"}],
+        filtered: [],
+        status: "not login"        
     },
     methods: {
         searchVideo(payload) {
-            // this.text = `success` + payload
+            this.filtered = payload
         },
         uploadVideo(payload) {
             this.videos.push(payload)
