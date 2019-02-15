@@ -7,6 +7,7 @@ Vue.component('search-video', {
     props: ['videos'],
     computed: {
         searchVideo: function() {
+            console.log('========', this.videos)
             let self = this
             let video =  this.videos.filter(function(vid){
                 if (vid.title.toLowerCase().indexOf(self.search.toLowerCase()) >= 0) {

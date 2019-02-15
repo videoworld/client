@@ -10,20 +10,20 @@ new Vue({
             console.log(err)
         })
     },
-    components: {
-        
-    },
     data: {
         filtered: [],
         videos:[],
-        recommendationVideos: []
+        recommendationVideos: [],
     },
     methods: {
         searchVideo(payload) {
             this.filtered = payload
         },
         uploadVideo(payload) {
+            console.log('======= get ')
+            text="get"
             this.videos.push(payload)
+
         }
     }
 })
