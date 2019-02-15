@@ -3,7 +3,7 @@ Vue.component('all-videos', {
     methods: {
         getTwitterText(title, url) {
             let convert = url.split(' ').join('%20')
-            return `${title} ${convert}`
+            return `${title} ${url}`
         },
         whatsappUrl(url) {
             return `https://api.whatsapp.com/send?text=${url}`
@@ -23,8 +23,8 @@ Vue.component('all-videos', {
                     <a class="twitter-share-button"
                         href="https://twitter.com/intent/tweet"
                         data-size="large"
-                        :data-text="getTwitterText(vid.title, vid.videoUrl)"
-                        data-url="#VideoWorld"
+                        :data-text="vid.title"
+                        :data-url="vid.videoUrl"
                         data-hashtags="VideoWorld"
                         data-via="twitterdev"
                         data-related="twitterapi,twitter">

@@ -1,7 +1,7 @@
 Vue.component('recommendation-videos', {
     props: ['recom-vids'],
     template: `
-    <div id="random-video" class="col-6 col-md-4 scroll">
+    <div id="random-video" class="col-10 col-md-1 scroll">
     <hr>
         <div class="card offset-md-1" style="width:80%">
             <div class="view overlay">
